@@ -163,7 +163,7 @@ class CopyComClient:
 		data.extend([{'email':e,'permissions':'read'} for e in add_emails])
 		return self.oauth.put(final_path, data=data)
 
-	def update_link_recipients(self, token):
+	def delete_link(self, token):
 		final_path = urllib.parse.urljoin('https://api.copy.com/rest/links/', 
 									token)
 		return self.oauth.delete(final_path)
